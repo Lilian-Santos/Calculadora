@@ -17,9 +17,9 @@ namespace Calculadora2
             InitializeComponent();
         }
 
-        float total = 0;
-        float valor1 = 0;
-        float valor2 = 0;
+        decimal total = 0;
+        decimal valor1 = 0;
+        decimal valor2 = 0;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -101,29 +101,29 @@ namespace Calculadora2
             if (resultado.Text.Contains('/'))
             {
                 String[] valores = resultado.Text.Split('/');
-                valor1 = Convert.ToSingle(valores[0]);
-                valor2 = Convert.ToSingle(valores[1]);
+                valor1 = Convert.ToDecimal(valores[0]);
+                valor2 = Convert.ToDecimal(valores[1]);
                 total = valor1 / valor2;
             }
             else if (resultado.Text.Contains('*'))
             {
                 String[] valores = resultado.Text.Split('*');
-                valor1 = Convert.ToSingle(valores[0]);
-                valor2 = Convert.ToSingle(valores[1]);
+                valor1 = Convert.ToDecimal(valores[0]);
+                valor2 = Convert.ToDecimal(valores[1]);
                 total = valor1 * valor2;
             }
             else if (resultado.Text.Contains('-'))
             {
                 String[] valores = resultado.Text.Split('-');
-                valor1 = Convert.ToSingle(valores[0]);
-                valor2 = Convert.ToSingle(valores[1]);
+                valor1 = Convert.ToDecimal(valores[0]);
+                valor2 = Convert.ToDecimal(valores[1]);
                 total = valor1 - valor2;
             }
             else
             {
                 String[] valores = resultado.Text.Split('+');
-                valor1 = Convert.ToSingle(valores[0]);
-                valor2 = Convert.ToSingle(valores[1]);
+                valor1 = Convert.ToDecimal(valores[0]);
+                valor2 = Convert.ToDecimal(valores[1]);
                 total = valor1 + valor2;
             }
             resultado.Text = Convert.ToString(total);
